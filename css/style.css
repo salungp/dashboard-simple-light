@@ -213,7 +213,7 @@ input[type="checkbox"] {
 		width: 160px !important;
 	}
 	.content .input-rounded {
-		min-width: 100px !important;
+		min-width: 80px !important;
 		display: none;
 	}
 	.content .input-rounded.active {
