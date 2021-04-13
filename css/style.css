@@ -1,5 +1,10 @@
+@font-face {
+  font-family: Cerebrisans;
+  src: url(../fonts/cerebrisans/cerebrisans-regular.ttf);
+}
+
 * {
-	font-family: 'Roboto', 'Arial', sans-serrif;
+	font-family: 'Cerebrisans', 'Arial', sans-serrif;
 	outline: none !important;
 }
 
@@ -74,7 +79,9 @@ h1, h2, h3, h4, p, a {
 		font-weight: 600;
 		position: relative;
 	}
-
+	.table-header .input-rounded {
+		min-width: 400px;
+	}
 	.nav-header-sec-active::before {
 		content: '';
 		width: 100%;
@@ -213,7 +220,7 @@ input[type="checkbox"] {
 		width: 160px !important;
 	}
 	.content .input-rounded {
-		min-width: 80px !important;
+		width: 50vw !important;
 		display: none;
 	}
 	.content .input-rounded.active {
