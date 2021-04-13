@@ -1,0 +1,584 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="icons/feather-icons/feather.css" rel="stylesheet">
+    <link href="icons/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+    <link href="icons/fontawesome/css/all.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <title>Hello, world!</title>
+
+    <!-- font family -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+  	<div class="sidebar">
+  		<div class="d-flex p-3 mb-3 justify-content-between">
+  			<a class="nav-header-brand" href="#">
+    			<div class="nav-logo"></div>
+    		</a>
+    		<div class="d-flex">
+    			<a class="nav-link nav-rounded" href="#"><i class="feather-settings"></i></a>
+    			<a class="nav-link nav-rounded" href="#"><i class="feather-bell"></i></a>
+    			<a class="nav-link nav-rounded" href="#"><i class="feather-help-circle"></i></a>
+    			<a class="nav-link nav-rounded" href="#"><i class="feather-user"></i></a>
+    		</div>
+  		</div>
+  		<div class="sidebar-menu-title">MAIN</div>
+  		<div class="sidebar-menu">
+  			<a class="nav-link" href="#">Graphical Dashboard</a>
+  			<a class="nav-link" href="#">Drive</a>
+  			<a class="nav-link" href="#">Manage</a>
+  		</div>
+  		<div class="sidebar-menu-title">MENU</div>
+  		<div class="sidebar-menu">
+  			<a class="nav-link nav-header-sec-active" href="#">My Drive</a>
+  			<a class="nav-link" href="#">Shared Files</a>
+  			<a class="nav-link" href="#">Archive</a>
+  			<a class="nav-link" href="#">Bin</a>
+  			<a class="nav-link" href="#">Stared</a>
+  			<a class="nav-link" href="#">Recent Files</a>
+  		</div>
+  	</div>
+  	<!-- Navbar Header -->
+    <div class="nav-header navbar position-relative navbar-expand-lg">
+    	<div class="container-fluid">
+    		<div class="nav-left d-flex">
+	    		<a class="nav-header-brand" href="#">
+	    			<div class="nav-logo"></div>
+	    		</a>
+	    		<div class="search-bar-wrap">
+	    			<form>
+	    				<div class="input-wrap">
+	    					<span>
+	    						<i class="feather-search"></i>
+	    					</span>
+		    				<input class="input-rounded search-auto" id="search" type="text" name="" placeholder="What are you looking for?">
+	    				</div>
+	    			</form>
+	    		</div>
+    		</div>
+    		<div class="navbar-nav-center">
+    			<a class="nav-link" href="#">Graphical Dashboard</a>
+    			<a class="nav-link" href="#">Drive</a>
+    			<a class="nav-link" href="#">Manage</a>
+    		</div>
+    		<div class="navbar-nav">
+    			<a class="nav-link nav-rounded" href="#"><i class="feather-settings"></i></a>
+    			<a class="nav-link nav-rounded" href="#"><i class="feather-bell"></i></a>
+    			<a class="nav-link nav-rounded" href="#"><i class="feather-help-circle"></i></a>
+    			<a class="nav-link nav-rounded" href="#"><i class="feather-user"></i></a>
+    		</div>
+    		<button class="btn btn-light btn-clear btn-toggle-nav"><i class="feather-menu"></i></button>
+    	</div>
+    </div>
+    <div class="nav-header-sec navbar navbar-expand-lg">
+    	<div class="container-fluid d-flex justify-content-center">
+    		<div class="navbar-nav-center">
+    			<a class="nav-link nav-header-sec-active" href="#">My Drive</a>
+    			<a class="nav-link" href="#">Shared Files</a>
+    			<a class="nav-link" href="#">Archive</a>
+    			<a class="nav-link" href="#">Bin</a>
+    			<a class="nav-link" href="#">Stared</a>
+    			<a class="nav-link" href="#">Recent Files</a>
+    		</div>
+    	</div>
+    </div>
+
+    <div class="content">
+    	<div class="container-fluid pt-3 pb-3">
+    		<div class="table-header d-flex justify-content-between">
+    			<div class="left d-flex align-items-center">
+	    			<h4 class="table-header-title" style="margin-right: 2vw !important">All Files</h4>
+	    			<ui class="nav">
+	    				<li class="nav-item">
+	    					<a class="nav-link-item" href="#">
+	    						<i class="fab fa-dropbox"></i>
+	    					</a>
+	    				</li>
+	    				<li class="nav-item">
+	    					<a class="nav-link-item" href="#">
+	    						<i class="fas fa-box"></i>
+	    					</a>
+	    				</li>
+	    				<li class="nav-item">
+	    					<a class="nav-link-item" href="#">
+	    						<i class="fab fa-google-drive"></i>
+	    					</a>
+	    				</li>
+	    			</ui>
+    			</div>
+    			<div class="search-bar-wrap">
+	    			<form>
+	    				<div class="input-wrap">
+	    					<span class="button-toggle-search">
+	    						<i class="feather-search"></i>
+	    					</span>
+		    				<input style="min-width: 400px" class="input-rounded search-auto" id="search" type="text" name="" placeholder="Search in drive?">
+	    				</div>
+	    			</form>
+	    		</div>
+  				<button type="button" class="btn btn-light btn-clear btn-close-search d-none"><i class="feather-x"></i></button>
+	    		<div class="btn-group">
+	    			<button class="btn btn-light">
+	    				<i class="feather-grid"></i>
+	    			</button>
+	    			<button class="btn btn-light">
+	    				<i class="feather-list"></i>
+	    			</button>
+	    		</div>
+    		</div>
+    		<div class="table-content p-3 table-responsive">
+    			<select class="form-select" style="max-width: 100px;border: none;margin-bottom: 16px;">
+    				<option>Files</option>
+    				<option>Video</option>
+    				<option>Music</option>
+    				<option>Pictures</option>
+    				<option>Document</option>
+    			</select>
+	    		<hr>
+	    		<table class="table">
+					  <thead>
+					    <tr>
+					      <th scope="col">
+					      	<input type="checkbox" name="check" class="form-check-input">
+					      </th>
+					      <th scope="col">Title</th>
+					      <th scope="col">Created by</th>
+					      <th scope="col">Date</th>
+					      <th scope="col">Size</th>
+					      <th scope="col">Action</th>
+					    </tr>
+					  </thead>
+					  <tbody>
+					    <tr>
+					      <th scope="row">
+					      	<input type="checkbox" name="check" class="form-check-input">
+					      </th>
+					      <td><span class="icon"><i class="feather-folder"></i></span>BookKeping</td>
+					      <td>Jhon</td>
+					      <td>JAN 12 2021</td>
+					      <td>4 MB</td>
+					      <td>
+					      	<div class="dropdown">
+									  <button class="btn btn-light btn-clear dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+									    <i class="feather-more-vertical"></i>
+									  </button>
+									  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-edit-2"></i>
+									    </span>Rename</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-clipboard"></i>
+									    </span>Copy</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-download"></i>
+									    </span>Download</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-link-2"></i>
+									    </span>Get Sharable Link</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-printer"></i>
+									    </span>Print</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-arrow-right-circle"></i>
+									    </span>Move</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-archive"></i>
+									    </span>Archive</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-info"></i>
+									    </span>Info</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-trash"></i>
+									    </span>Delete</a></li>
+									  </ul>
+									</div>
+					      </td>
+					    </tr>
+					    <tr>
+					      <th scope="row">
+					      	<input type="checkbox" name="check" class="form-check-input">
+					      </th>
+					      <td><span class="icon"><i class="feather-folder"></i></span>BookKeping</td>
+					      <td>Jhon</td>
+					      <td>JAN 12 2021</td>
+					      <td>4 MB</td>
+					      <td>
+					      	<div class="dropdown">
+									  <button class="btn btn-light btn-clear dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+									    <i class="feather-more-vertical"></i>
+									  </button>
+									  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-edit-2"></i>
+									    </span>Rename</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-clipboard"></i>
+									    </span>Copy</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-download"></i>
+									    </span>Download</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-link-2"></i>
+									    </span>Get Sharable Link</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-printer"></i>
+									    </span>Print</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-arrow-right-circle"></i>
+									    </span>Move</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-archive"></i>
+									    </span>Archive</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-info"></i>
+									    </span>Info</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-trash"></i>
+									    </span>Delete</a></li>
+									  </ul>
+									</div>
+					      </td>
+					    </tr>
+					    <tr>
+					      <th scope="row">
+					      	<input type="checkbox" name="check" class="form-check-input">
+					      </th>
+					      <td><span class="icon"><i class="feather-folder"></i></span>BookKeping</td>
+					      <td>Jhon</td>
+					      <td>JAN 12 2021</td>
+					      <td>4 MB</td>
+					      <td>
+					      	<div class="dropdown">
+									  <button class="btn btn-light btn-clear dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+									    <i class="feather-more-vertical"></i>
+									  </button>
+									  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-edit-2"></i>
+									    </span>Rename</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-clipboard"></i>
+									    </span>Copy</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-download"></i>
+									    </span>Download</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-link-2"></i>
+									    </span>Get Sharable Link</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-printer"></i>
+									    </span>Print</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-arrow-right-circle"></i>
+									    </span>Move</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-archive"></i>
+									    </span>Archive</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-info"></i>
+									    </span>Info</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-trash"></i>
+									    </span>Delete</a></li>
+									  </ul>
+									</div>
+					      </td>
+					    </tr>
+					    <tr>
+					      <th scope="row">
+					      	<input type="checkbox" name="check" class="form-check-input">
+					      </th>
+					      <td><span class="icon"><i class="feather-file-text"></i></span>BookKeping</td>
+					      <td>Jhon</td>
+					      <td>JAN 12 2021</td>
+					      <td>4 MB</td>
+					      <td>
+					      	<div class="dropdown">
+									  <button class="btn btn-light btn-clear dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+									    <i class="feather-more-vertical"></i>
+									  </button>
+									  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-edit-2"></i>
+									    </span>Rename</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-clipboard"></i>
+									    </span>Copy</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-download"></i>
+									    </span>Download</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-link-2"></i>
+									    </span>Get Sharable Link</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-printer"></i>
+									    </span>Print</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-arrow-right-circle"></i>
+									    </span>Move</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-archive"></i>
+									    </span>Archive</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-info"></i>
+									    </span>Info</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-trash"></i>
+									    </span>Delete</a></li>
+									  </ul>
+									</div>
+					      </td>
+					    </tr>
+					    <tr>
+					      <th scope="row">
+					      	<input type="checkbox" name="check" class="form-check-input">
+					      </th>
+					      <td><span class="icon"><i class="feather-file-text"></i></span>BookKeping</td>
+					      <td>Jhon</td>
+					      <td>JAN 12 2021</td>
+					      <td>4 MB</td>
+					      <td>
+					      	<div class="dropdown">
+									  <button class="btn btn-light btn-clear dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+									    <i class="feather-more-vertical"></i>
+									  </button>
+									  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-edit-2"></i>
+									    </span>Rename</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-clipboard"></i>
+									    </span>Copy</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-download"></i>
+									    </span>Download</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-link-2"></i>
+									    </span>Get Sharable Link</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-printer"></i>
+									    </span>Print</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-arrow-right-circle"></i>
+									    </span>Move</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-archive"></i>
+									    </span>Archive</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-info"></i>
+									    </span>Info</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-trash"></i>
+									    </span>Delete</a></li>
+									  </ul>
+									</div>
+					      </td>
+					    </tr>
+					    <tr>
+					      <th scope="row">
+					      	<input type="checkbox" name="check" class="form-check-input">
+					      </th>
+					      <td><span class="icon"><i class="feather-file-text"></i></span>BookKeping</td>
+					      <td>Jhon</td>
+					      <td>JAN 12 2021</td>
+					      <td>4 MB</td>
+					      <td>
+					      	<div class="dropdown">
+									  <button class="btn btn-light btn-clear dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+									    <i class="feather-more-vertical"></i>
+									  </button>
+									  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-edit-2"></i>
+									    </span>Rename</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-clipboard"></i>
+									    </span>Copy</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-download"></i>
+									    </span>Download</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-link-2"></i>
+									    </span>Get Sharable Link</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-printer"></i>
+									    </span>Print</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-arrow-right-circle"></i>
+									    </span>Move</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-archive"></i>
+									    </span>Archive</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-info"></i>
+									    </span>Info</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-trash"></i>
+									    </span>Delete</a></li>
+									  </ul>
+									</div>
+					      </td>
+					    </tr>
+					    <tr>
+					      <th scope="row">
+					      	<input type="checkbox" name="check" class="form-check-input">
+					      </th>
+					      <td><span class="icon"><i class="feather-file-text"></i></span>BookKeping</td>
+					      <td>Jhon</td>
+					      <td>JAN 12 2021</td>
+					      <td>4 MB</td>
+					      <td>
+					      	<div class="dropdown">
+									  <button class="btn btn-light btn-clear dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+									    <i class="feather-more-vertical"></i>
+									  </button>
+									  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-edit-2"></i>
+									    </span>Rename</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-clipboard"></i>
+									    </span>Copy</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-download"></i>
+									    </span>Download</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-link-2"></i>
+									    </span>Get Sharable Link</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-printer"></i>
+									    </span>Print</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-arrow-right-circle"></i>
+									    </span>Move</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-archive"></i>
+									    </span>Archive</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-info"></i>
+									    </span>Info</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-trash"></i>
+									    </span>Delete</a></li>
+									  </ul>
+									</div>
+					      </td>
+					    </tr>
+					    <tr>
+					      <th scope="row">
+					      	<input type="checkbox" name="check" class="form-check-input">
+					      </th>
+					      <td><span class="icon"><i class="feather-file-text"></i></span>BookKeping</td>
+					      <td>Jhon</td>
+					      <td>JAN 12 2021</td>
+					      <td>4 MB</td>
+					      <td>
+					      	<div class="dropdown">
+									  <button class="btn btn-light btn-clear dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+									    <i class="feather-more-vertical"></i>
+									  </button>
+									  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-edit-2"></i>
+									    </span>Rename</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-clipboard"></i>
+									    </span>Copy</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-download"></i>
+									    </span>Download</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-link-2"></i>
+									    </span>Get Sharable Link</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-printer"></i>
+									    </span>Print</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-arrow-right-circle"></i>
+									    </span>Move</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-archive"></i>
+									    </span>Archive</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-info"></i>
+									    </span>Info</a></li>
+									    <li><a class="dropdown-item" href="#"><span class="icon">
+									    	<i class="feather-trash"></i>
+									    </span>Delete</a></li>
+									  </ul>
+									</div>
+					      </td>
+					    </tr>
+					  </tbody>
+					</table>
+    		</div>
+    	</div>
+    </div>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	  <script>
+	  $( function() {
+	    var availableTags = [
+	      "ActionScript",
+	      "AppleScript",
+	      "Asp",
+	      "BASIC",
+	      "C",
+	      "C++",
+	      "Clojure",
+	      "COBOL",
+	      "ColdFusion",
+	      "Erlang",
+	      "Fortran",
+	      "Groovy",
+	      "Haskell",
+	      "Java",
+	      "JavaScript",
+	      "Lisp",
+	      "Perl",
+	      "PHP",
+	      "Python",
+	      "Ruby",
+	      "Scala",
+	      "Scheme"
+	    ];
+	    $( ".search-auto" ).autocomplete({
+	      source: availableTags,
+	      _renderItem: function( ul, item ) {
+				  return $( "<li>" )
+				    .attr( "data-value", item.value )
+				    .append( item.label )
+				    .appendTo( ul );
+				}
+	    });
+		  $('.ui-menu-item-wrapper').prepend('<span class="icon"><i class="feather-search"></i></span>');
+		  $('.button-toggle-search').click(function() {
+		  	$('.input-rounded').toggleClass('active');
+		  	$('.btn-close-search').toggleClass('d-none');
+		  	$('.left').toggleClass('d-none');
+		  });
+		  $('.btn-close-search').click(function() {
+		  	$('.input-rounded').toggleClass('active');
+		  	$('.btn-close-search').toggleClass('d-none');
+		  	$('.left').toggleClass('d-none');
+		  });
+		  $('.btn-toggle-nav').click(function() {
+		  	$('.sidebar').toggleClass('sidebar-active');
+		  })
+	  } );
+	  </script>
+  </body>
+</html>

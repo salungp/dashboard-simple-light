@@ -1,0 +1,264 @@
+* {
+	font-family: 'Roboto', 'Arial', sans-serrif;
+	outline: none !important;
+}
+
+h1, h2, h3, h4, p, a {
+	color: #34495e;
+}
+
+.nav-header {
+	background: #ffffff;
+	box-shadow: 0 1px 2px rgba(0,0,0,.1);
+}
+
+.nav-logo {
+	width: 100px;
+	height: 40px;
+	background: url("../img/logo.svg");
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.nav-link {
+	color: #34495e !important;
+}
+
+.nav-link:hover, .nav-link.active {
+	color: #3498db !important;
+}
+
+.nav-rounded {
+	border-radius: 50%;
+	width: 32px;
+	height: 32px;
+	display: flex;
+	font-size: 16px;
+	justify-content: center;
+	align-items: center;
+	background: rgba(52, 152, 219,0.1);
+	border: 1px solid rgba(52, 152, 219,.2);
+	color: #3498db !important;
+	transition: .3s ease-in-out;
+}
+
+.nav-rounded:hover {
+	background: #3498db;
+	color: #ffffff !important;
+}
+
+@media(min-width: 768px) {
+	.nav-left .nav-header-brand {
+		margin-right: 2vw;
+	}
+
+	.nav-rounded {
+		margin-left: 12px;
+	}
+
+	.navbar-nav-center {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		display: flex;
+	}
+	.btn-toggle-nav {
+		display: none;
+	}
+	.sidebar {
+		display: none;
+	}
+	.nav-header-sec-active {
+		color: #3498db !important;
+		font-weight: 600;
+		position: relative;
+	}
+
+	.nav-header-sec-active::before {
+		content: '';
+		width: 100%;
+		height: 2px;
+		border-radius: 3px;
+		background: #3498db;
+		position: absolute;
+		bottom: -3px;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+}
+
+.input-rounded {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 40px;
+	padding-right: 18px;
+	font-size: 12px;
+	border: none;
+	border-radius: 50px;
+	border: 1px solid rgba(0,0,0,.1);
+}
+
+.input-wrap {
+	border-radius: 50px;
+	position: relative;
+}
+
+.input-wrap span {
+	position: absolute;
+	left: 18px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.input-rounded:focus {
+	border: 1px solid rgba(0,0,0,.3);
+}
+
+.nav-header-sec {
+	width: 100%;
+	height: 46px;
+	box-shadow: 0 4px 8px rgba(0,0,0,.1);
+}
+
+
+
+.content {
+	background-color: #F6F9FB;
+	min-height: 84vh;
+}
+
+.table-header {
+	padding: 0 40px;
+	height: 80px;
+	align-items: center;
+	background-color: #ffffff;
+	box-shadow: 0 2px 3px rgba(0,0,0,.1);
+	margin-bottom: 10px;
+}
+
+.table-content {
+	background-color: #ffffff;
+	box-shadow: 0 2px 3px rgba(0,0,0,.1);
+}
+
+.table-header-title {
+	font-size: 24px;
+	font-weight: 600;
+	margin-bottom: 0 !important;
+}
+
+.nav-link-item {
+	margin-right: 12px;
+	color: #34495e;
+}
+
+td, th {
+	vertical-align: initial;
+}
+
+.dropdown {
+	width: 10px;
+}
+
+.dropdown-toggle::after {
+	display: none;
+}
+
+.btn-clear {
+	background-color: transparent;
+	border: none;
+	font-size: 24px;
+}
+
+.dropdown-menu {
+	border: none;
+	box-shadow: 0 4px 8px rgba(0,0,0,.1);
+}
+
+.icon {
+	display: inline-block;
+	width: 30px;
+}
+
+table th, td {
+	border-bottom: 1px solid rgba(0,0,0,.2) !important;
+}
+
+.ui-menu {
+	border-radius: 6px;
+	border: none !important;
+	box-shadow: 0 4px 8px rgba(0,0,0,.1);
+	overflow: hidden;
+}
+
+.ui-menu-item-wrapper {
+	padding: 6px 12px !important;
+}
+
+input[type="checkbox"] {
+	cursor: pointer;
+}
+
+.input-wrap {
+	position: relative;
+}
+
+
+@media (max-width: 768px) {
+	.table-header-title {
+		font-size: 18px;
+	}
+	.nav-header .input-rounded {
+		width: 160px !important;
+	}
+	.content .input-rounded {
+		min-width: 100px !important;
+		display: none;
+	}
+	.content .input-rounded.active {
+		display: block;
+	}
+	.table-header {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	.navbar-nav, .navbar-nav-center, .nav-header-sec {
+		display: none;
+	}
+	.nav-header-brand {
+		margin-right: 12px;
+	}
+	.btn-toggle-nav {
+		display: block;
+	}
+	.sidebar {
+		position: fixed;
+		top: 0;
+		left: -80%;
+		background-color: #ffffff;
+		width: 80%;
+		z-index: 99999;
+		height: 100%;
+		transition: .3s ease-in-out;
+	}
+	.sidebar-active {
+		box-shadow: 3px 0 6px rgba(0,0,0,.1);
+		left: 0;
+	}
+	.nav-rounded {
+		margin-right: 6px;
+	}
+	.sidebar-menu-title {
+		margin-left: 15px;
+		margin-bottom: 15px;
+		opacity: .4;
+	}
+	.sidebar-menu {
+		margin-bottom: 24px;
+	}
+	.nav-link {
+		padding-top: 8px;
+		padding-bottom: 8px;
+	}
+}
