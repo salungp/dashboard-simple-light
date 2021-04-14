@@ -11,13 +11,10 @@
     <link href="icons/fontawesome/css/fontawesome.min.css" rel="stylesheet">
     <link href="icons/fontawesome/css/all.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link href="js/dropzone/dist/min/dropzone.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
     <title>Hello, world!</title>
-
-    <!-- font family -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   </head>
   <body>
   	<div class="sidebar">
@@ -126,8 +123,14 @@
 	    				</div>
 	    			</form>
 	    		</div>
+
+					<!-- button close search -->
   				<button type="button" class="btn btn-light btn-clear btn-close-search d-none"><i class="feather-x"></i></button>
 	    		<div class="btn-group">
+	    			<!-- button open upload modal -->
+		    		<button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#uploadModal">
+		    			<i class="feather-upload"></i>
+						</button>
 	    			<button class="btn btn-light">
 	    				<i class="feather-grid"></i>
 	    			</button>
@@ -525,9 +528,30 @@
     	</div>
     </div>
 
+    <!-- Upload Modal -->
+    <!-- Modal -->
+		<div class="modal fade" id="uploadModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog modal-dialog-centered">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title" id="exampleModalLabel">Upload File</h5>
+		        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		      </div>
+		      <div class="modal-body">
+		        <form class="dropzone" action="file/to"></form>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+		        <button type="button" class="btn btn-primary"><span class="icon"><i class="feather-upload"></i></span>Upload</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="js/dropzone/dist/min/dropzone.min.js"></script>
 	  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	  <script>
 	  $( function() {

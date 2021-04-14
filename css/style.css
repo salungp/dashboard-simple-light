@@ -269,3 +269,25 @@ input[type="checkbox"] {
 		padding-bottom: 8px;
 	}
 }
+
+/* Clear rounded button */
+.btn-clear {
+	border-radius: 50% !important;
+}
+
+/* Modal Modify */
+.modal-content {
+	border: none !important;
+	border-radius: 8px;
+}
+
+.modal-title {
+	font-weight: 600;
+}
+
+/* Dropzone modify */
+.dropzone {
+	border-radius: 8px;
+	background-color: #f2f2f2 !important;
+	border: 1px solid rgba(0,0,0,.1);
+}
