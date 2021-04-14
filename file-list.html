@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="icons/feather-icons/feather.css" rel="stylesheet">
+    <link href="icons/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+    <link href="icons/fontawesome/css/all.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="js/dropzone/dist/min/dropzone.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+  	<div class="sidebar">
+  		<div class="d-flex p-3 mb-3 justify-content-between">
+  			<a class="nav-header-brand" href="#">
+    			<div class="nav-logo"></div>
+    		</a>
+    		<div class="d-flex">
+    			<a class="nav-link nav-rounded" href="#"><i class="feather-settings"></i></a>
+    			<a class="nav-link nav-rounded" href="#"><i class="feather-bell"></i></a>
+    			<a class="nav-link nav-rounded" href="#"><i class="feather-help-circle"></i></a>
+    			<a class="nav-link nav-rounded" href="#"><i class="feather-user"></i></a>
+    		</div>
+  		</div>
+  		<div class="sidebar-menu-title">MAIN</div>
+  		<div class="sidebar-menu">
+  			<a class="nav-link" href="#">Graphical Dashboard</a>
+  			<a class="nav-link" href="#">Drive</a>
+  			<a class="nav-link" href="#">Manage</a>
+  		</div>
+  		<div class="sidebar-menu-title">MENU</div>
+  		<div class="sidebar-menu">
+  			<a class="nav-link nav-header-sec-active" href="#">My Drive</a>
+  			<a class="nav-link" href="#">Shared Files</a>
+  			<a class="nav-link" href="#">Archive</a>
+  			<a class="nav-link" href="#">Bin</a>
+  			<a class="nav-link" href="#">Stared</a>
+  			<a class="nav-link" href="#">Recent Files</a>
+  		</div>
+  	</div>
+
+  	<!-- Navbar Header -->
+    <div class="nav-header navbar position-relative navbar-expand-lg">
+    	<div class="container-fluid">
+    		<div class="nav-left d-flex">
+	    		<a class="nav-header-brand" href="#">
+	    			<div class="nav-logo"></div>
+	    		</a>
+	    		<div class="search-bar-wrap">
+	    			<form class="autosearch">
+	    				<div class="input-wrap">
+	    					<span>
+	    						<i class="feather-search"></i>
+	    					</span>
+		    				<input class="input-rounded search-auto" id="search" type="text" name="" placeholder="What are you looking for?">
+	    				</div>
+	    				<!-- Search list -->
+	    				<div class="autosearch-list">
+	    					<ul class="autosearch-list-item dropdown-menu">
+							    <li>
+							    	<a class="dropdown-item" href="#">
+							    		<span class="icon"><i class="feather-search"></i></span>Sample Search
+							    	</a>
+							    </li>
+							    <li>
+							    	<a class="dropdown-item" href="#">
+							    		<span class="icon"><i class="feather-search"></i></span>Brief Document
+							    	</a>
+							    </li>
+							    <li>
+							    	<a class="dropdown-item" href="#">
+							    		<span class="icon"><i class="feather-search"></i></span>Get Sharable Link
+							  		</a>
+							  	</li>
+	    					</ul>
+	    				</div>
+	    			</form>
+	    		</div>
+    		</div>
+    		<div class="navbar-nav-center">
+    			<a class="nav-link" href="#">Graphical Dashboard</a>
+    			<a class="nav-link" href="#">Drive</a>
+    			<a class="nav-link" href="#">Manage</a>
+    		</div>
+    		<div class="navbar-nav">
+    			<a class="nav-link nav-rounded" href="#"><i class="feather-settings"></i></a>
+    			<a class="nav-link nav-rounded" href="#"><i class="feather-bell"></i></a>
+    			<a class="nav-link nav-rounded" href="#"><i class="feather-help-circle"></i></a>
+    			<a class="nav-link nav-rounded" href="#"><i class="feather-user"></i></a>
+    		</div>
+    		<button class="btn btn-light btn-clear btn-toggle-nav"><i class="feather-menu"></i></button>
+    	</div>
+    </div>
+    <div class="nav-header-sec navbar navbar-expand-lg">
+    	<div class="container-fluid d-flex justify-content-center">
+    		<div class="navbar-nav-center">
+    			<a class="nav-link nav-header-sec-active" href="#">My Drive</a>
+    			<a class="nav-link" href="#">Shared Files</a>
+    			<a class="nav-link" href="#">Archive</a>
+    			<a class="nav-link" href="#">Bin</a>
+    			<a class="nav-link" href="#">Stared</a>
+    			<a class="nav-link" href="#">Recent Files</a>
+    		</div>
+    	</div>
+    </div>
+
+    <div class="content">
+    	<div class="container-fluid pt-3 pb-3">
+    		<div class="table-header d-flex justify-content-between">
+    			<div class="left d-flex align-items-center">
+	    			<h4 class="table-header-title" style="margin-right: 2vw !important">All Files</h4>
+	    			<ul class="nav">
+	    				<li class="nav-item">
+	    					<a class="nav-link-item" href="#">
+	    						<i class="fab fa-dropbox"></i>
+	    					</a>
+	    				</li>
+	    				<li class="nav-item">
+	    					<a class="nav-link-item" href="#">
+	    						<i class="fas fa-box"></i>
+	    					</a>
+	    				</li>
+	    				<li class="nav-item">
+	    					<a class="nav-link-item" href="#">
+	    						<i class="fab fa-google-drive"></i>
+	    					</a>
+	    				</li>
+	    			</ul>
+    			</div>
+
+    			<ul class="nav breadcrumb-custom">
+    				<li class="nav-item">
+    					<a class="nav-link-item" href="#">My Drive</a>
+    				</li>
+    				<li class="nav-item">
+    					<div class="nav-link-item"><i class="feather-chevron-right"></i></div>
+    				</li>
+    				<li class="nav-item">
+    					<a class="nav-link-item" href="#">ENGINERING</a>
+    				</li>
+    				<li class="nav-item">
+    					<div class="nav-link-item"><i class="feather-chevron-right"></i></div>
+    				</li>
+    				<li class="nav-item">
+    					<a class="nav-link-item" href="#">STRATEGY</a>
+    				</li>
+    			</ul>
+
+    			<div class="search-bar-wrap">
+	    			<form>
+	    				<div class="input-wrap">
+	    					<span class="button-toggle-search">
+	    						<i class="feather-search"></i>
+	    					</span>
+		    				<input class="input-rounded search-auto" id="search" type="text" name="" placeholder="Search in drive?">
+	    				</div>
+	    				<!-- Search list -->
+	    				<div class="autosearch-list">
+	    					<ul class="autosearch-list-item dropdown-menu">
+							    <li>
+							    	<a class="dropdown-item" href="#">
+							    		<span class="icon"><i class="feather-search"></i></span>Sample Search
+							    	</a>
+							    </li>
+							    <li>
+							    	<a class="dropdown-item" href="#">
+							    		<span class="icon"><i class="feather-search"></i></span>Brief Document
+							    	</a>
+							    </li>
+							    <li>
+							    	<a class="dropdown-item" href="#">
+							    		<span class="icon"><i class="feather-search"></i></span>Get Sharable Link
+							  		</a>
+							  	</li>
+	    					</ul>
+	    				</div>
+	    			</form>
+	    		</div>
+
+					<!-- button close search -->
+  				<button type="button" class="btn btn-light btn-clear btn-close-search d-none"><i class="feather-x"></i></button>
+	    		<div class="btn-group">
+	    			<!-- button open upload modal -->
+		    		<button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#uploadModal">
+		    			<i class="feather-upload"></i>
+						</button>
+	    			<button class="btn btn-light">
+	    				<i class="feather-grid"></i>
+	    			</button>
+	    			<button class="btn btn-light">
+	    				<i class="feather-list"></i>
+	    			</button>
+	    		</div>
+    		</div>
+
+    		<!-- content -->
+    		<div class="card-wrappers">
+    			<div class="row">
+    				<div class="col-md-7">
+    					<div class="row">
+    						<div class="col-md-3">
+    							
+    							<div class="folder-list folder-list-active">
+    								<div class="folder-list-header">
+	    								<div class="folder-wrap-title">Folder</div>
+	    								<hr>
+    								</div>
+    								<div class="folder-list-body">
+    									<a class="folder-list-item justify-content-between" href="#">
+    										<span class="icon d-block"><i class="fa fa-folder"></i></span>
+    										<span class="folder-name-item d-block">Sharing</span>
+    										<i class="feather-chevron-right d-block"></i>
+    									</a>
+    									<a class="folder-list-item justify-content-between" href="#">
+    										<span class="icon d-block"><i class="fa fa-folder"></i></span>
+    										<span class="folder-name-item d-block">Sharing</span>
+    										<i class="feather-chevron-right d-block"></i>
+    									</a>
+    									<a class="folder-list-item justify-content-between" href="#">
+    										<span class="icon d-block"><i class="fa fa-folder"></i></span>
+    										<span class="folder-name-item d-block">Sharing</span>
+    										<i class="feather-chevron-right d-block"></i>
+    									</a>
+    									<a class="folder-list-item justify-content-between" href="#">
+    										<span class="icon d-block"><i class="fa fa-folder"></i></span>
+    										<span class="folder-name-item d-block">Sharing</span>
+    										<i class="feather-chevron-right d-block"></i>
+    									</a>
+    									<a class="folder-list-item justify-content-between" href="#">
+    										<span class="icon d-block"><i class="fa fa-folder"></i></span>
+    										<span class="folder-name-item d-block">Sharing</span>
+    										<i class="feather-chevron-right d-block"></i>
+    									</a>
+    									<a class="folder-list-item justify-content-between" href="#">
+    										<span class="icon d-block"><i class="fa fa-folder"></i></span>
+    										<span class="folder-name-item d-block">Sharing</span>
+    										<i class="feather-chevron-right d-block"></i>
+    									</a>
+    									<a class="folder-list-item justify-content-between" href="#">
+    										<span class="icon d-block"><i class="fa fa-folder"></i></span>
+    										<span class="folder-name-item d-block">Sharing</span>
+    										<i class="feather-chevron-right d-block"></i>
+    									</a>
+    									<a class="folder-list-item justify-content-between" href="#">
+    										<span class="icon d-block"><i class="fa fa-folder"></i></span>
+    										<span class="folder-name-item d-block">Sharing</span>
+    										<i class="feather-chevron-right d-block"></i>
+    									</a>
+    									<a class="folder-list-item justify-content-between" href="#">
+    										<span class="icon d-block"><i class="fa fa-folder"></i></span>
+    										<span class="folder-name-item d-block">Sharing</span>
+    										<i class="feather-chevron-right d-block"></i>
+    									</a>
+    									<a class="folder-list-item justify-content-between" href="#">
+    										<span class="icon d-block"><i class="fa fa-folder"></i></span>
+    										<span class="folder-name-item d-block">Sharing</span>
+    										<i class="feather-chevron-right d-block"></i>
+    									</a>
+    								</div>
+    							</div>
+
+    						</div>
+
+    						<div class="col-md-3">
+    							
+    							<div class="folder-list">
+    								<div class="folder-list-header">
+	    								<div class="folder-wrap-title">Sub Folder</div>
+	    								<hr>
+    								</div>
+    								<div class="folder-list-body">
+    									<a class="folder-list-item justify-content-between" href="#">
+    										<span class="icon d-block"><i class="fa fa-folder"></i></span>
+    										<span class="folder-name-item d-block">Sharing</span>
+    										<i class="feather-chevron-right d-block"></i>
+    									</a>
+    									<a class="folder-list-item justify-content-between" href="#">
+    										<span class="icon d-block"><i class="fa fa-folder"></i></span>
+    										<span class="folder-name-item d-block">Sharing</span>
+    										<i class="feather-chevron-right d-block"></i>
+    									</a>
+    									<a class="folder-list-item justify-content-between" href="#">
+    										<span class="icon d-block"><i class="fa fa-folder"></i></span>
+    										<span class="folder-name-item d-block">Sharing</span>
+    										<i class="feather-chevron-right d-block"></i>
+    									</a>
+    									<a class="folder-list-item justify-content-between" href="#">
+    										<span class="icon d-block"><i class="fa fa-folder"></i></span>
+    										<span class="folder-name-item d-block">Sharing</span>
+    										<i class="feather-chevron-right d-block"></i>
+    									</a>
+    									<a class="folder-list-item justify-content-between" href="#">
+    										<span class="icon d-block"><i class="fa fa-folder"></i></span>
+    										<span class="folder-name-item d-block">Sharing</span>
+    										<i class="feather-chevron-right d-block"></i>
+    									</a>
+    								</div>
+
+    								<div class="folder-list-header">
+	    								<div class="folder-wrap-title">Files</div>
+	    								<hr>
+    								</div>
+    								<div class="folder-list-body">
+    									<a class="folder-list-item justify-content-between" href="#">
+    										<span class="icon d-block"><i class="feather-file"></i></span>
+    										<span class="folder-name-item d-block">Sharing</span>
+    										<i class="feather-chevron-right d-block"></i>
+    									</a>
+    									<a class="folder-list-item justify-content-between" href="#">
+    										<span class="icon d-block"><i class="feather-file"></i></span>
+    										<span class="folder-name-item d-block">Sharing</span>
+    										<i class="feather-chevron-right d-block"></i>
+    									</a>
+    									<a class="folder-list-item justify-content-between" href="#">
+    										<span class="icon d-block"><i class="feather-file"></i></span>
+    										<span class="folder-name-item d-block">Sharing</span>
+    										<i class="feather-chevron-right d-block"></i>
+    									</a>
+    									<a class="folder-list-item justify-content-between" href="#">
+    										<span class="icon d-block"><i class="feather-file"></i></span>
+    										<span class="folder-name-item d-block">Sharing</span>
+    										<i class="feather-chevron-right d-block"></i>
+    									</a>
+    								</div>
+
+    							</div>
+
+    						</div>
+
+    						<div class="col-md-3">
+    							
+    							<div class="folder-list">
+    								<div class="folder-list-header">
+	    								<div class="folder-wrap-title">Sub Folder</div>
+	    								<hr>
+    								</div>
+    								<div class="folder-list-body">
+    									<a class="folder-list-item justify-content-between" href="#">
+    										<span class="icon d-block"><i class="fa fa-folder"></i></span>
+    										<span class="folder-name-item d-block">Sharing</span>
+    										<i class="feather-chevron-right d-block"></i>
+    									</a>
+    									<a class="folder-list-item justify-content-between" href="#">
+    										<span class="icon d-block"><i class="fa fa-folder"></i></span>
+    										<span class="folder-name-item d-block">Sharing</span>
+    										<i class="feather-chevron-right d-block"></i>
+    									</a>
+    									<a class="folder-list-item justify-content-between" href="#">
+    										<span class="icon d-block"><i class="fa fa-folder"></i></span>
+    										<span class="folder-name-item d-block">Sharing</span>
+    										<i class="feather-chevron-right d-block"></i>
+    									</a>
+    									<a class="folder-list-item justify-content-between" href="#">
+    										<span class="icon d-block"><i class="fa fa-folder"></i></span>
+    										<span class="folder-name-item d-block">Sharing</span>
+    										<i class="feather-chevron-right d-block"></i>
+    									</a>
+    									<a class="folder-list-item justify-content-between" href="#">
+    										<span class="icon d-block"><i class="fa fa-folder"></i></span>
+    										<span class="folder-name-item d-block">Sharing</span>
+    										<i class="feather-chevron-right d-block"></i>
+    									</a>
+    									<a class="folder-list-item justify-content-between" href="#">
+    										<span class="icon d-block"><i class="fa fa-folder"></i></span>
+    										<span class="folder-name-item d-block">Sharing</span>
+    										<i class="feather-chevron-right d-block"></i>
+    									</a>
+    									<a class="folder-list-item justify-content-between" href="#">
+    										<span class="icon d-block"><i class="fa fa-folder"></i></span>
+    										<span class="folder-name-item d-block">Sharing</span>
+    										<i class="feather-chevron-right d-block"></i>
+    									</a>
+    									<a class="folder-list-item justify-content-between" href="#">
+    										<span class="icon d-block"><i class="fa fa-folder"></i></span>
+    										<span class="folder-name-item d-block">Sharing</span>
+    										<i class="feather-chevron-right d-block"></i>
+    									</a>
+    									<a class="folder-list-item justify-content-between" href="#">
+    										<span class="icon d-block"><i class="fa fa-folder"></i></span>
+    										<span class="folder-name-item d-block">Sharing</span>
+    										<i class="feather-chevron-right d-block"></i>
+    									</a>
+    									<a class="folder-list-item justify-content-between" href="#">
+    										<span class="icon d-block"><i class="fa fa-folder"></i></span>
+    										<span class="folder-name-item d-block">Sharing</span>
+    										<i class="feather-chevron-right d-block"></i>
+    									</a>
+    								</div>
+    							</div>
+
+    						</div>
+
+    						<div class="col-md-3">
+    							
+    							<div class="folder-list">
+    								<div class="folder-list-header">
+	    								<div class="folder-wrap-title">Sub Folder</div>
+	    								<hr>
+    								</div>
+    								<div class="folder-list-body">
+    									<a class="folder-list-item justify-content-between" href="#">
+    										<span class="icon d-block"><i class="fa fa-folder"></i></span>
+    										<span class="folder-name-item d-block">Sharing</span>
+    										<i class="feather-chevron-right d-block"></i>
+    									</a>
+    									<a class="folder-list-item justify-content-between" href="#">
+    										<span class="icon d-block"><i class="fa fa-folder"></i></span>
+    										<span class="folder-name-item d-block">Sharing</span>
+    										<i class="feather-chevron-right d-block"></i>
+    									</a>
+    									<a class="folder-list-item justify-content-between" href="#">
+    										<span class="icon d-block"><i class="fa fa-folder"></i></span>
+    										<span class="folder-name-item d-block">Sharing</span>
+    										<i class="feather-chevron-right d-block"></i>
+    									</a>
+    									<a class="folder-list-item justify-content-between" href="#">
+    										<span class="icon d-block"><i class="fa fa-folder"></i></span>
+    										<span class="folder-name-item d-block">Sharing</span>
+    										<i class="feather-chevron-right d-block"></i>
+    									</a>
+    									<a class="folder-list-item justify-content-between" href="#">
+    										<span class="icon d-block"><i class="fa fa-folder"></i></span>
+    										<span class="folder-name-item d-block">Sharing</span>
+    										<i class="feather-chevron-right d-block"></i>
+    									</a>
+    									<a class="folder-list-item justify-content-between" href="#">
+    										<span class="icon d-block"><i class="fa fa-folder"></i></span>
+    										<span class="folder-name-item d-block">Sharing</span>
+    										<i class="feather-chevron-right d-block"></i>
+    									</a>
+    									<a class="folder-list-item justify-content-between" href="#">
+    										<span class="icon d-block"><i class="fa fa-folder"></i></span>
+    										<span class="folder-name-item d-block">Sharing</span>
+    										<i class="feather-chevron-right d-block"></i>
+    									</a>
+    									<a class="folder-list-item justify-content-between" href="#">
+    										<span class="icon d-block"><i class="fa fa-folder"></i></span>
+    										<span class="folder-name-item d-block">Sharing</span>
+    										<i class="feather-chevron-right d-block"></i>
+    									</a>
+    									<a class="folder-list-item justify-content-between" href="#">
+    										<span class="icon d-block"><i class="fa fa-folder"></i></span>
+    										<span class="folder-name-item d-block">Sharing</span>
+    										<i class="feather-chevron-right d-block"></i>
+    									</a>
+    									<a class="folder-list-item justify-content-between" href="#">
+    										<span class="icon d-block"><i class="fa fa-folder"></i></span>
+    										<span class="folder-name-item d-block">Sharing</span>
+    										<i class="feather-chevron-right d-block"></i>
+    									</a>
+    								</div>
+    							</div>
+
+    						</div>
+
+    					</div>
+    				</div>
+    				<div class="col-md-5">
+    					
+    					<!-- Preview Document -->
+    					<div class="document-preview">
+    						<div class="document-item" style="background-image: url(img/thumbnail.png); background-size: cover;background-position: center;"></div>
+    						<div class="document-footer d-flex justify-content-center">
+    							<div class="button">
+    								<button class="btn btn-outline-primary"><span class="icon"><i class="feather-printer"></i></span>Print</button>
+    								<button class="btn btn-primary"><span class="icon"><i class="feather-download"></i></span>Download</button>
+    							</div>
+    						</div>
+    					</div>
+
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+
+    		<!-- Upload Modal -->
+		    <!-- Modal -->
+				<div class="modal fade" id="uploadModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				  <div class="modal-dialog modal-dialog-centered">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <h5 class="modal-title" id="exampleModalLabel">Upload File</h5>
+				        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				      </div>
+				      <div class="modal-body">
+				        <form class="dropzone" action="file/to"></form>
+				      </div>
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+				        <button type="button" class="btn btn-primary"><span class="icon"><i class="feather-upload"></i></span>Upload</button>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+
+
+
+<!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="js/dropzone/dist/min/dropzone.min.js"></script>
+	  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	  <script>
+	  $( function() {
+	    var availableTags = [
+	      "ActionScript",
+	      "AppleScript",
+	      "Asp",
+	      "BASIC",
+	      "C",
+	      "C++",
+	      "Clojure",
+	      "COBOL",
+	      "ColdFusion",
+	      "Erlang",
+	      "Fortran",
+	      "Groovy",
+	      "Haskell",
+	      "Java",
+	      "JavaScript",
+	      "Lisp",
+	      "Perl",
+	      "PHP",
+	      "Python",
+	      "Ruby",
+	      "Scala",
+	      "Scheme"
+	    ];
+	    $( ".search-auto" ).autocomplete({
+	      source: availableTags,
+	      _renderItem: function( ul, item ) {
+				  return $( "<li>" )
+				    .attr( "data-value", item.value )
+				    .append( item.label )
+				    .appendTo( ul );
+				}
+	    });
+		  $('.ui-menu-item-wrapper').prepend('<span class="icon"><i class="feather-search"></i></span>');
+		  $('.button-toggle-search').click(function() {
+		  	$('.input-rounded').toggleClass('active');
+		  	$('.btn-close-search').toggleClass('d-none');
+		  	$('.left').toggleClass('d-none');
+		  });
+		  $('.btn-close-search').click(function() {
+		  	$('.input-rounded').toggleClass('active');
+		  	$('.btn-close-search').toggleClass('d-none');
+		  	$('.left').toggleClass('d-none');
+		  });
+		  $('.btn-toggle-nav').click(function() {
+		  	$('.sidebar').toggleClass('sidebar-active');
+		  });
+
+		  $('.search-auto').click(function() {
+		  	$(this).parents('.autosearch').find('.autosearch-list-item').toggleClass('show');
+		  });
+
+		  $(window).click(function(event) {
+		  	var target = $( event.target );
+			  if (!target.is('.search-auto')) {
+			    $('.autosearch-list-item').removeClass('show');
+			  }
+			})
+
+
+	  } );
+	  </script>
+  </body>
+</html>

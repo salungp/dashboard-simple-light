@@ -351,3 +351,67 @@ input[type="checkbox"] {
 .card-folder .folder-name {
 	display: block;
 }
+
+.card-wrappers {
+	background-color: #ffffff;
+	box-shadow: 0 3px 6px rgba(0,0,0,.1);
+}
+
+.folder-list {
+	padding-top: 40px;
+	padding-bottom: 40px;
+	border-right: 1px solid rgba(0,0,0,.1);
+}
+
+.folder-list-header {
+	padding-left: 24px;
+	padding-right: 24px;
+}
+
+.folder-list-body {
+	margin-bottom: 24px;
+}
+
+.folder-list-header hr {
+	margin-bottom: 8px;
+}
+
+.folder-wrap-title {
+	font-weight: 600;
+}
+
+.folder-list-item {
+	display: flex;
+	align-items: center;
+	padding: 10px 24px;
+	transition: .3s ease-in-out;	
+}
+
+.folder-list-item .icon {
+	width: 18px;
+}
+
+.folder-list-item:hover {
+	background-color: #f6f6f6;
+	color: #34495e;
+}
+
+.folder-list-active {
+	box-shadow: 3px 0 6px rgba(0,0,0,.1);
+	height: 100%;
+}
+
+.document-preview {
+	padding: 50px 70px;
+	width: 100%;
+}
+
+.document-item {
+	width: 100%;
+	height: 80vh;
+	background-color: #cccccc;
+}
+
+.document-footer {
+	padding-top: 24px;
+}
