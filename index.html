@@ -45,6 +45,7 @@
   			<a class="nav-link" href="#">Recent Files</a>
   		</div>
   	</div>
+
   	<!-- Navbar Header -->
     <div class="nav-header navbar position-relative navbar-expand-lg">
     	<div class="container-fluid">
@@ -53,12 +54,32 @@
 	    			<div class="nav-logo"></div>
 	    		</a>
 	    		<div class="search-bar-wrap">
-	    			<form>
+	    			<form class="autosearch">
 	    				<div class="input-wrap">
 	    					<span>
 	    						<i class="feather-search"></i>
 	    					</span>
 		    				<input class="input-rounded search-auto" id="search" type="text" name="" placeholder="What are you looking for?">
+	    				</div>
+	    				<!-- Search list -->
+	    				<div class="autosearch-list">
+	    					<ul class="autosearch-list-item dropdown-menu">
+							    <li>
+							    	<a class="dropdown-item" href="#">
+							    		<span class="icon"><i class="feather-search"></i></span>Sample Search
+							    	</a>
+							    </li>
+							    <li>
+							    	<a class="dropdown-item" href="#">
+							    		<span class="icon"><i class="feather-search"></i></span>Brief Document
+							    	</a>
+							    </li>
+							    <li>
+							    	<a class="dropdown-item" href="#">
+							    		<span class="icon"><i class="feather-search"></i></span>Get Sharable Link
+							  		</a>
+							  	</li>
+	    					</ul>
 	    				</div>
 	    			</form>
 	    		</div>
@@ -120,6 +141,26 @@
 	    						<i class="feather-search"></i>
 	    					</span>
 		    				<input class="input-rounded search-auto" id="search" type="text" name="" placeholder="Search in drive?">
+	    				</div>
+	    				<!-- Search list -->
+	    				<div class="autosearch-list">
+	    					<ul class="autosearch-list-item dropdown-menu">
+							    <li>
+							    	<a class="dropdown-item" href="#">
+							    		<span class="icon"><i class="feather-search"></i></span>Sample Search
+							    	</a>
+							    </li>
+							    <li>
+							    	<a class="dropdown-item" href="#">
+							    		<span class="icon"><i class="feather-search"></i></span>Brief Document
+							    	</a>
+							    </li>
+							    <li>
+							    	<a class="dropdown-item" href="#">
+							    		<span class="icon"><i class="feather-search"></i></span>Get Sharable Link
+							  		</a>
+							  	</li>
+	    					</ul>
 	    				</div>
 	    			</form>
 	    		</div>
@@ -601,7 +642,20 @@
 		  });
 		  $('.btn-toggle-nav').click(function() {
 		  	$('.sidebar').toggleClass('sidebar-active');
-		  })
+		  });
+
+		  $('.search-auto').click(function() {
+		  	$(this).parents('.autosearch').find('.autosearch-list-item').toggleClass('show');
+		  });
+
+		  $(window).click(function(event) {
+		  	var target = $( event.target );
+			  if (!target.is('.search-auto')) {
+			    $('.autosearch-list-item').removeClass('show');
+			  }
+			})
+
+
 	  } );
 	  </script>
   </body>
