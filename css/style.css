@@ -269,6 +269,9 @@ input[type="checkbox"] {
 		padding-top: 8px;
 		padding-bottom: 8px;
 	}
+	.breadcrumb-custom {
+		display: none;
+	}
 }
 
 /* Clear rounded button */
